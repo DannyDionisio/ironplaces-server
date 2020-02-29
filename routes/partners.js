@@ -26,6 +26,7 @@ router.post("/addplace", (req, res, next) => {
 router.post("/places/:id/delete", (req, res, next) => {
   //apagar place do mongo
   const id = req.params.id;
+  console.log("id",id);
   Partners.findByIdAndDelete(id)
   .then(place => {
     res.send("apagado com sucesso");
