@@ -9,6 +9,14 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 const cors = require("cors");
+const admin = require('firebase-admin');
+
+const serviceAccount = require("./configs/fbServiceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://ironplaces-auth.firebaseio.com"
+});
 
 mongoose
   .connect("mongodb://localhost/ironplaces-server", { useNewUrlParser: true })

@@ -2,14 +2,6 @@ const express = require('express');
 const authRoutes = express.Router();
 const admin = require('firebase-admin');
 
-const serviceAccount = require("../configs/fbServiceAccountKey.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://ironplaces-auth.firebaseio.com"
-});
-
-
 authRoutes.get('/loggedin', (req, res, next) => {
   // console.log('logged in head', req.headers);
   if (req.headers.authorization) {

@@ -3,13 +3,6 @@ const router = express.Router();
 const Partners = require("../models/partners-model");
 const admin = require("firebase-admin");
 
-const serviceAccount = require("../configs/fbServiceAccountKey.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://ironplaces-auth.firebaseio.com"
-});
-
 // POST route => to create a new project
 router.post("/addplace", (req, res, next) => {
   if (req.headers.authorization) {
