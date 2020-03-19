@@ -11,8 +11,8 @@ router.post("/addplace", (req, res, next) => {
       .verifyIdToken(req.headers.authorization)
       .then(decodedToken => {
         console.log("decoded token", decodedToken);
-        const { name, type, address, coordinates, discount } = req.body;
-        const newPlace = new Partners({ name, type, address, coordinates, discount });
+        const { name, type, address, latitude, longitude, discount } = req.body;
+        const newPlace = new Partners({ name, type, address, latitude, longitude, discount });
         newPlace
           .save()
           .then(response => {

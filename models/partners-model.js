@@ -6,7 +6,8 @@ const partnerSchema = new Schema(
     name: String,
     type: String,
     address: String,
-    coordinates: String,
+    latitude: String,
+    longitude: String,
     discount: String
   },
   {
