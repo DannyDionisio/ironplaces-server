@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 const cors = require("cors");
-const admin = require('firebase-admin');
+const admin = require("firebase-admin");
 
 const serviceAccount = require("./configs/fbServiceAccountKey.json");
 
@@ -56,7 +56,10 @@ app.use(
 app.use(
   cors({
     credentials: true,
-    origin: ['http://localhost:3000'] // <== this will be the URL of our React app (it will be running on port 3000)
+    origin: [
+      "http://localhost:3000",
+      "http://ironplaces.s3-website.eu-west-3.amazonaws.com/"
+    ] // <== this will be the URL of our React app (it will be running on port 3000)
   })
 );
 
