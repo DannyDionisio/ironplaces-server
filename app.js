@@ -55,7 +55,6 @@ app.use(
 // ADD CORS SETTINGS HERE TO ALLOW CROSS-ORIGIN INTERACTION:
 app.use(
   cors({
-    credentials: true,
     origin: [
       "http://localhost:3000",
       "http://ironplaces.s3-website.eu-west-3.amazonaws.com/"
